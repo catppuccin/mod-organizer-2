@@ -6,32 +6,32 @@
 </h3>
 
 <p align="center">
-	<a href="https://github.com/daveedmee/mod-organizer-2/stargazers"><img src="https://img.shields.io/github/stars/daveedmee/mod-organizer-2?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/daveedmee/mod-organizer-2/issues"><img src="https://img.shields.io/github/issues/daveedmee/mod-organizer-2?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/daveedmee/mod-organizer-2/contributors"><img src="https://img.shields.io/github/contributors/daveedmee/mod-organizer-2?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/catppuccin/mod-organizer-2/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/mod-organizer-2?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/catppuccin/mod-organizer-2/issues"><img src="https://img.shields.io/github/issues/catppuccin/mod-organizer-2?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/catppuccin/mod-organizer-2/contributors"><img src="https://img.shields.io/github/contributors/daveedmee/mod-organizer-2?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/daveedmee/mod-organizer-2/main/assets/previews/preview.webp"/>
+	<img src="https://raw.githubusercontent.com/catppuccin/mod-organizer-2/main/assets/previews/preview.webp"/>
 </p>
 
 ## Previews
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="https://raw.githubusercontent.com/daveedmee/mod-organizer-2/main/assets/previews/latte.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/mod-organizer-2/main/assets/previews/latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="https://raw.githubusercontent.com/daveedmee/mod-organizer-2/main/assets/previews/frappe.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/mod-organizer-2/main/assets/previews/frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="https://raw.githubusercontent.com/daveedmee/mod-organizer-2/main/assets/previews/macchiato.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/mod-organizer-2/main/assets/previews/macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="https://raw.githubusercontent.com/daveedmee/mod-organizer-2/main/assets/previews/mocha.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/mod-organizer-2/main/assets/previews/mocha.webp"/>
 </details>
 
 ## Usage
