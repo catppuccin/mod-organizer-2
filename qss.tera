@@ -1,0 +1,293 @@
+---
+whiskers:
+    version: "^2.9.0"
+    matrix:
+        - flavor
+    filename: "stylesheets/Catppuccin {{ flavor.name }}.qss"
+    hex_format: "#{{R}}{{G}}{{B}}{{Z}}"
+---
+* {
+  background: transparent;
+  color: {{ text.hex }};
+  font-size: 12px;
+  border: 0; }
+  *:disabled {
+    color: {{ text.hex }}; }
+
+QAbstractScrollArea {
+  background: {{ base.hex }};
+  border: 1px solid {{ crust.hex }};
+  alternate-background-color: {{ base.hex }}; }
+  QAbstractScrollArea::item {
+    min-height: 22px; }
+    QAbstractScrollArea::item:hover {
+      background: {{ surface0.hex }};
+      color: {{ text.hex }}; }
+    QAbstractScrollArea::item:selected {
+      background: {{ surface1.hex }}; }
+
+QScrollBar:horizontal {
+  margin: 0 17px; }
+
+QScrollBar:vertical {
+  margin: 17px 0; }
+
+QScrollBar::add-line {
+  background: {{ crust.hex }};
+  subcontrol-origin: margin; }
+  QScrollBar::add-line:horizontal {
+    width: 17px;
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Right.svg");
+    subcontrol-position: right; }
+  QScrollBar::add-line:vertical {
+    height: 17px;
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg");
+    subcontrol-position: bottom; }
+  QScrollBar::add-line:hover {
+    background: {{ mantle.hex }}; }
+
+QScrollBar::sub-line {
+  background: {{ crust.hex }};
+  subcontrol-origin: margin; }
+  QScrollBar::sub-line:horizontal {
+    width: 17px;
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Left.svg");
+    subcontrol-position: left; }
+  QScrollBar::sub-line:vertical {
+    height: 17px;
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Up.svg");
+    subcontrol-position: top; }
+  QScrollBar::sub-line:hover {
+    background: {{ mantle.hex }}; }
+
+QScrollBar::add-page, QScrollBar::sub-page {
+  background: {{ crust.hex }}; }
+
+QScrollBar::handle {
+  background: {{ surface0.hex }};
+  margin: 1px; }
+  QScrollBar::handle:hover {
+    background: {{ surface1.hex }}; }
+
+QTreeView::branch:open:has-children {
+  image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg"); }
+
+QTreeView::branch:closed:has-children {
+  image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Right.svg"); }
+
+QCheckBox::indicator, QRadioButton::indicator, QTreeView::indicator {
+  background: {{ crust.hex }};
+  border: 1px solid {{ text.hex }}; }
+  QCheckBox::indicator:checked, QRadioButton::indicator:checked, QTreeView::indicator:checked {
+    image: url("./Catppuccin/check.svg"); }
+  QCheckBox::indicator:hover, QRadioButton::indicator:hover, QTreeView::indicator:hover {
+    border: 1px solid {{ text.hex }}; }
+
+QToolBar {
+  qproperty-movable: true; }
+  QToolBar::handle, QToolBar::separator {
+    width: 2px;
+    height: 2px;
+    background: {{ crust.hex }}; }
+  QToolBar QToolButton {
+    margin: 4px; }
+    QToolBar QToolButton:hover {
+      background: {{ mantle.hex }}; }
+
+QHeaderView {
+  margin: -2px; }
+  QHeaderView::section {
+    height: 22px;
+    background: {{ mantle.hex }};
+    color: {{ text.hex }};
+    padding: 0 4px;
+    border: 0;
+    border-right: 1px solid {{ surface0.hex }}; }
+    QHeaderView::section:last {
+      margin-right: -2px; }
+    QHeaderView::section:hover {
+      background: {{ surface0.hex }}; }
+  QHeaderView::down-arrow {
+    padding-right: 10px;
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg");
+    subcontrol-position: center right; }
+  QHeaderView::up-arrow {
+    padding-right: 10px;
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Up.svg");
+    subcontrol-position: center right; }
+
+QComboBox, QLineEdit {
+  min-height: 20px;
+  background: {{ base.hex }};
+  color: {{ text.hex }};
+  padding-left: 5px;
+  border: 1px solid {{ surface0.hex }};
+  margin: 6px 0; }
+  QComboBox::drop-down, QLineEdit::drop-down {
+    width: 20px;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    border: 0; }
+  QComboBox::down-arrow, QLineEdit::down-arrow {
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg"); }
+  QComboBox:disabled, QLineEdit:disabled {
+    color: {{ mantle.hex }}; }
+
+QTabWidget::pane {
+  background: {{ mantle.hex }};
+  border: 1px solid {{ base.hex }}; }
+
+QTabWidget QAbstractItemView {
+  background: {{ base.hex }};
+  alternate-background-color: {{ base.hex }};
+  border: 1px solid {{ surface0.hex }};}
+
+QTabWidget QHeaderView::section {
+  background: {{ surface0.hex }};}
+
+QTabBar::tab {
+  height: 24px;
+  background: {{ mantle.hex }};
+  color: {{ text.hex }};
+  padding: 0 10px;
+  border: 1px solid transparent;
+  margin-bottom: -1px; }
+  QTabBar::tab:disabled {
+    color: {{ text.hex }};}
+  QTabBar::tab:hover {
+    background: {{ surface0.hex }};}
+  QTabBar::tab:selected {
+    background: {{ surface1.hex }};
+    color: {{ text.hex }};
+    padding: 0 10px; }
+
+QMenu {
+  background: {{ surface0.hex }};
+  color: {{ text.hex }};
+  padding: 2px;
+  border: 1px solid {{ overlay0.hex }}; }
+  QMenu:separator {
+    height: 1px;
+    background: {{ text.hex }};
+    margin: 0 10px; }
+  QMenu::item {
+    min-height: 22px;
+    padding: 2px 20px; }
+    QMenu::item:selected {
+      background: {{ surface1.hex }}; }
+  QMenu::icon {
+    padding-right: 20px; }
+  QMenu::right-arrow {
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Right.svg");
+    padding-right: 10px; }
+  QMenu QPushButton {
+    height: 24px;
+    background: {{ mantle.hex }};
+    color: {{ text.hex }};
+    text-align: left;
+    padding-left: 20px; }
+    QMenu QPushButton::menu-indicator {
+      padding-right: 10px;
+      subcontrol-origin: padding;
+      subcontrol-position: center right; }
+  QMenu QCheckBox {
+    height: 24px;
+    background: {{ mantle.hex }};
+    color: {{ text.hex }}; }
+    QMenu QCheckBox:hover {
+      background: {{ surface0.hex }};
+      color: {{ text.hex }}; }
+
+QMenuBar {
+  min-height: 24px;
+  background: {{ crust.hex }}; }
+  QMenuBar::item {
+    padding: 0 10px; }
+    QMenuBar::item:selected {
+      background: {{ surface0.hex }};
+      color: {{ text.hex }}; }
+
+QStatusBar {
+  background: {{ mantle.hex }}; }
+  QStatusBar::item {
+    padding: 0 15px; }
+
+QGroupBox {
+  padding-top: 21px; }
+  QGroupBox::title {
+    padding-top: 10px; }
+
+QProgressBar {
+  background: transparent;
+  color: {{ text.hex }};
+  text-align: center;
+  border: 1px solid {{ surface2.hex }}; }
+  QProgressBar::chunk {
+    background: {{ subtext1.hex }}; }
+
+QPushButton {
+  color: {{ text.hex }};
+  min-height: 22px;
+  padding: 0 10px; }
+  QPushButton:hover {
+    background: {{ surface0.hex }};
+    color: {{ text.hex }};
+    border: 0; }
+  QPushButton::menu-indicator {
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg"); }
+
+QToolButton {
+  padding: 4px; }
+  QToolButton:hover {
+    background: {{ surface0.hex }};
+    color: {{ text.hex }};
+    border: 0; }
+  QToolButton::menu-indicator {
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg"); }
+
+QToolTip {
+  background: {{ surface0.hex }};
+  border: 1px solid {{ base.hex }}; }
+
+QTableCornerButton::section {
+  background: {{ mantle.hex }};
+  border: 0;
+  border-right: 1px solid {{ base.hex }}; }
+
+QSpinBox, QDoubleSpinBox {
+  background: {{ mantle.hex }};
+  border: 1px solid {{ mantle.hex }}; }
+
+QMainWindow, QDialog {
+  background: {{ crust.hex }}; }
+
+QSplitter {
+  min-width: 8px; }
+
+LinkLabel {
+  qproperty-linkColor: {{ blue.hex }}; }
+
+#startButton {
+  background: {{ base.hex }};
+  padding: 4px 0; }
+  #startButton:hover {
+    background: {{ surface0.hex }}; }
+
+#linkButton {
+  background: {{ base.hex }}; }
+  #linkButton:hover {
+    background: {{ surface0.hex }}; }
+
+#executablesListBox {
+  margin-right: 8px; }
+
+#notes, #comments {
+  background: {{ surface0.hex }};
+  border: 1px solid {{ base.hex }}; }
+
+#iconLabel {
+  image: url("./Catppuccin/mo2-{{ flavor.identifier }}.svg");
+  qproperty-pixmap: none; }
+
+#displayCategoriesBtn {
+  min-width: 12px; }
