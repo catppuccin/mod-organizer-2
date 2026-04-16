@@ -1,22 +1,30 @@
+---
+whiskers:
+    version: "^2.9.0"
+    matrix:
+        - flavor
+    filename: "stylesheets/Catppuccin {{ flavor.name }}.qss"
+    hex_format: "#{{R}}{{G}}{{B}}{{Z}}"
+---
 * {
   background: transparent;
-  color: #CDD6F4;
+  color: {{ text.hex }};
   font-size: 12px;
   border: 0; }
   *:disabled {
-    color: #CDD6F4; }
+    color: {{ text.hex }}; }
 
 QAbstractScrollArea {
-  background: #1E1E2E;
-  border: 1px solid #11111B;
-  alternate-background-color: #1E1E2E; }
+  background: {{ base.hex }};
+  border: 1px solid {{ crust.hex }};
+  alternate-background-color: {{ base.hex }}; }
   QAbstractScrollArea::item {
     min-height: 22px; }
     QAbstractScrollArea::item:hover {
-      background: #313244;
-      color: #CDD6F4; }
+      background: {{ surface0.hex }};
+      color: {{ text.hex }}; }
     QAbstractScrollArea::item:selected {
-      background: #45475A; }
+      background: {{ surface1.hex }}; }
 
 QScrollBar:horizontal {
   margin: 0 17px; }
@@ -25,95 +33,95 @@ QScrollBar:vertical {
   margin: 17px 0; }
 
 QScrollBar::add-line {
-  background: #11111B;
+  background: {{ crust.hex }};
   subcontrol-origin: margin; }
   QScrollBar::add-line:horizontal {
     width: 17px;
-    image: url("./Catppuccin/Arrows/mocha/Right.svg");
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Right.svg");
     subcontrol-position: right; }
   QScrollBar::add-line:vertical {
     height: 17px;
-    image: url("./Catppuccin/Arrows/mocha/Down.svg");
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg");
     subcontrol-position: bottom; }
   QScrollBar::add-line:hover {
-    background: #181825; }
+    background: {{ mantle.hex }}; }
 
 QScrollBar::sub-line {
-  background: #11111B;
+  background: {{ crust.hex }};
   subcontrol-origin: margin; }
   QScrollBar::sub-line:horizontal {
     width: 17px;
-    image: url("./Catppuccin/Arrows/mocha/Left.svg");
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Left.svg");
     subcontrol-position: left; }
   QScrollBar::sub-line:vertical {
     height: 17px;
-    image: url("./Catppuccin/Arrows/mocha/Up.svg");
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Up.svg");
     subcontrol-position: top; }
   QScrollBar::sub-line:hover {
-    background: #181825; }
+    background: {{ mantle.hex }}; }
 
 QScrollBar::add-page, QScrollBar::sub-page {
-  background: #11111B; }
+  background: {{ crust.hex }}; }
 
 QScrollBar::handle {
-  background: #313244;
+  background: {{ surface0.hex }};
   margin: 1px; }
   QScrollBar::handle:hover {
-    background: #45475A; }
+    background: {{ surface1.hex }}; }
 
 QTreeView::branch:open:has-children {
-  image: url("./Catppuccin/Arrows/mocha/Down.svg"); }
+  image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg"); }
 
 QTreeView::branch:closed:has-children {
-  image: url("./Catppuccin/Arrows/mocha/Right.svg"); }
+  image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Right.svg"); }
 
 QCheckBox::indicator, QRadioButton::indicator, QTreeView::indicator {
-  background: #11111B;
-  border: 1px solid #CDD6F4; }
+  background: {{ crust.hex }};
+  border: 1px solid {{ text.hex }}; }
   QCheckBox::indicator:checked, QRadioButton::indicator:checked, QTreeView::indicator:checked {
     image: url("./Catppuccin/check.svg"); }
   QCheckBox::indicator:hover, QRadioButton::indicator:hover, QTreeView::indicator:hover {
-    border: 1px solid #CDD6F4; }
+    border: 1px solid {{ text.hex }}; }
 
 QToolBar {
   qproperty-movable: true; }
   QToolBar::handle, QToolBar::separator {
     width: 2px;
     height: 2px;
-    background: #11111B; }
+    background: {{ crust.hex }}; }
   QToolBar QToolButton {
     margin: 4px; }
     QToolBar QToolButton:hover {
-      background: #181825; }
+      background: {{ mantle.hex }}; }
 
 QHeaderView {
   margin: -2px; }
   QHeaderView::section {
     height: 22px;
-    background: #181825;
-    color: #CDD6F4;
+    background: {{ mantle.hex }};
+    color: {{ text.hex }};
     padding: 0 4px;
     border: 0;
-    border-right: 1px solid #313244; }
+    border-right: 1px solid {{ surface0.hex }}; }
     QHeaderView::section:last {
       margin-right: -2px; }
     QHeaderView::section:hover {
-      background: #313244; }
+      background: {{ surface0.hex }}; }
   QHeaderView::down-arrow {
     padding-right: 10px;
-    image: url("./Catppuccin/Arrows/mocha/Down.svg");
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg");
     subcontrol-position: center right; }
   QHeaderView::up-arrow {
     padding-right: 10px;
-    image: url("./Catppuccin/Arrows/mocha/Up.svg");
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Up.svg");
     subcontrol-position: center right; }
 
 QComboBox, QLineEdit {
   min-height: 20px;
-  background: #1E1E2E;
-  color: #CDD6F4;
+  background: {{ base.hex }};
+  color: {{ text.hex }};
   padding-left: 5px;
-  border: 1px solid #313244;
+  border: 1px solid {{ surface0.hex }};
   margin: 6px 0; }
   QComboBox::drop-down, QLineEdit::drop-down {
     width: 20px;
@@ -121,61 +129,61 @@ QComboBox, QLineEdit {
     subcontrol-position: top right;
     border: 0; }
   QComboBox::down-arrow, QLineEdit::down-arrow {
-    image: url("./Catppuccin/Arrows/mocha/Down.svg"); }
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg"); }
   QComboBox:disabled, QLineEdit:disabled {
-    color: #181825; }
+    color: {{ mantle.hex }}; }
 
 QTabWidget::pane {
-  background: #181825;
-  border: 1px solid #1E1E2E; }
+  background: {{ mantle.hex }};
+  border: 1px solid {{ base.hex }}; }
 
 QTabWidget QAbstractItemView {
-  background: #1E1E2E;
-  alternate-background-color: #1E1E2E;
-  border: 1px solid #313244;}
+  background: {{ base.hex }};
+  alternate-background-color: {{ base.hex }};
+  border: 1px solid {{ surface0.hex }};}
 
 QTabWidget QHeaderView::section {
-  background: #313244;}
+  background: {{ surface0.hex }};}
 
 QTabBar::tab {
   height: 24px;
-  background: #181825;
-  color: #CDD6F4;
+  background: {{ mantle.hex }};
+  color: {{ text.hex }};
   padding: 0 10px;
   border: 1px solid transparent;
   margin-bottom: -1px; }
   QTabBar::tab:disabled {
-    color: #CDD6F4;}
+    color: {{ text.hex }};}
   QTabBar::tab:hover {
-    background: #313244;}
+    background: {{ surface0.hex }};}
   QTabBar::tab:selected {
-    background: #45475A;
-    color: #CDD6F4;
+    background: {{ surface1.hex }};
+    color: {{ text.hex }};
     padding: 0 10px; }
 
 QMenu {
-  background: #313244;
-  color: #CDD6F4;
+  background: {{ surface0.hex }};
+  color: {{ text.hex }};
   padding: 2px;
-  border: 1px solid #6C7086; }
+  border: 1px solid {{ overlay0.hex }}; }
   QMenu:separator {
     height: 1px;
-    background: #CDD6F4;
+    background: {{ text.hex }};
     margin: 0 10px; }
   QMenu::item {
     min-height: 22px;
     padding: 2px 20px; }
     QMenu::item:selected {
-      background: #45475A; }
+      background: {{ surface1.hex }}; }
   QMenu::icon {
     padding-right: 20px; }
   QMenu::right-arrow {
-    image: url("./Catppuccin/Arrows/mocha/Right.svg");
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Right.svg");
     padding-right: 10px; }
   QMenu QPushButton {
     height: 24px;
-    background: #181825;
-    color: #CDD6F4;
+    background: {{ mantle.hex }};
+    color: {{ text.hex }};
     text-align: left;
     padding-left: 20px; }
     QMenu QPushButton::menu-indicator {
@@ -184,23 +192,23 @@ QMenu {
       subcontrol-position: center right; }
   QMenu QCheckBox {
     height: 24px;
-    background: #181825;
-    color: #CDD6F4; }
+    background: {{ mantle.hex }};
+    color: {{ text.hex }}; }
     QMenu QCheckBox:hover {
-      background: #313244;
-      color: #CDD6F4; }
+      background: {{ surface0.hex }};
+      color: {{ text.hex }}; }
 
 QMenuBar {
   min-height: 24px;
-  background: #11111B; }
+  background: {{ crust.hex }}; }
   QMenuBar::item {
     padding: 0 10px; }
     QMenuBar::item:selected {
-      background: #313244;
-      color: #CDD6F4; }
+      background: {{ surface0.hex }};
+      color: {{ text.hex }}; }
 
 QStatusBar {
-  background: #181825; }
+  background: {{ mantle.hex }}; }
   QStatusBar::item {
     padding: 0 15px; }
 
@@ -211,74 +219,74 @@ QGroupBox {
 
 QProgressBar {
   background: transparent;
-  color: #CDD6F4;
+  color: {{ text.hex }};
   text-align: center;
-  border: 1px solid #585B70; }
+  border: 1px solid {{ surface2.hex }}; }
   QProgressBar::chunk {
-    background: #BAC2DE; }
+    background: {{ subtext1.hex }}; }
 
 QPushButton {
-  color: #CDD6F4;
+  color: {{ text.hex }};
   min-height: 22px;
   padding: 0 10px; }
   QPushButton:hover {
-    background: #313244;
-    color: #CDD6F4;
+    background: {{ surface0.hex }};
+    color: {{ text.hex }};
     border: 0; }
   QPushButton::menu-indicator {
-    image: url("./Catppuccin/Arrows/mocha/Down.svg"); }
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg"); }
 
 QToolButton {
   padding: 4px; }
   QToolButton:hover {
-    background: #313244;
-    color: #CDD6F4;
+    background: {{ surface0.hex }};
+    color: {{ text.hex }};
     border: 0; }
   QToolButton::menu-indicator {
-    image: url("./Catppuccin/Arrows/mocha/Down.svg"); }
+    image: url("./Catppuccin/Arrows/{{ flavor.identifier }}/Down.svg"); }
 
 QToolTip {
-  background: #313244;
-  border: 1px solid #1E1E2E; }
+  background: {{ surface0.hex }};
+  border: 1px solid {{ base.hex }}; }
 
 QTableCornerButton::section {
-  background: #181825;
+  background: {{ mantle.hex }};
   border: 0;
-  border-right: 1px solid #1E1E2E; }
+  border-right: 1px solid {{ base.hex }}; }
 
 QSpinBox, QDoubleSpinBox {
-  background: #181825;
-  border: 1px solid #181825; }
+  background: {{ mantle.hex }};
+  border: 1px solid {{ mantle.hex }}; }
 
 QMainWindow, QDialog {
-  background: #11111B; }
+  background: {{ crust.hex }}; }
 
 QSplitter {
   min-width: 8px; }
 
 LinkLabel {
-  qproperty-linkColor: #89B4FA; }
+  qproperty-linkColor: {{ blue.hex }}; }
 
 #startButton {
-  background: #1E1E2E;
+  background: {{ base.hex }};
   padding: 4px 0; }
   #startButton:hover {
-    background: #313244; }
+    background: {{ surface0.hex }}; }
 
 #linkButton {
-  background: #1E1E2E; }
+  background: {{ base.hex }}; }
   #linkButton:hover {
-    background: #313244; }
+    background: {{ surface0.hex }}; }
 
 #executablesListBox {
   margin-right: 8px; }
 
 #notes, #comments {
-  background: #313244;
-  border: 1px solid #1E1E2E; }
+  background: {{ surface0.hex }};
+  border: 1px solid {{ base.hex }}; }
 
 #iconLabel {
-  image: url("./Catppuccin/mo2-mocha.svg");
+  image: url("./Catppuccin/mo2-{{ flavor.identifier }}.svg");
   qproperty-pixmap: none; }
 
 #displayCategoriesBtn {
